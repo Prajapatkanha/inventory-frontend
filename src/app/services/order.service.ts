@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';  // ✅ Environment Import
 
 export interface Order {
   _id?: string;
@@ -15,7 +16,11 @@ export interface Order {
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:5000/api/orders';
+  // ✅ Use environment URL for production & local both
+  private apiUrl = `${environment.apiUrl}/order`;
+
+  // 🔹 Old Local URL (Just for reference, not used)
+  // private apiUrl = 'http://localhost:5000/order';
 
   constructor(private http: HttpClient) {}
 

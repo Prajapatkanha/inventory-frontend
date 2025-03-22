@@ -60,7 +60,9 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "inventory-frontend:build:production"
+              "buildTarget": "inventory-frontend:build:production",
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.prod.ts"
             },
             "development": {
               "buildTarget": "inventory-frontend:build:development"

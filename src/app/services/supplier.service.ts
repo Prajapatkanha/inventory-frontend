@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';  // ✅ Environment Import
 
 export interface Supplier {
   _id?: string;
@@ -15,7 +16,11 @@ export interface Supplier {
   providedIn: 'root'
 })
 export class SupplierService {
-  private apiUrl = 'http://localhost:5000/api/suppliers';
+  // ✅ Use environment URL for production & local both
+  private apiUrl = `${environment.apiUrl}/suppliers`;
+
+  // 🔹 Old Local URL (Just for reference, not used)
+  // private apiUrl = 'http://localhost:5000/suppliers';
 
   constructor(private http: HttpClient) {}
 

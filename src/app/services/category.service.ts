@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';  // ✅ Environment Import
 
 export interface Category {
   _id?: string;
@@ -11,8 +12,11 @@ export interface Category {
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'http://localhost:5000/api/categories';
+  // ✅ Use environment URL for production & local both
+  private apiUrl = `${environment.apiUrl}/category`;
 
+  // 🔹 Old Local URL (Just for reference, not used)
+  // private apiUrl = 'http://localhost:5000/category';
   constructor(private http: HttpClient) {}
 
   /** ✅ Get All Categories */

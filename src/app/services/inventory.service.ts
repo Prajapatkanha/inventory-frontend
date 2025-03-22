@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';  // ✅ Environment Import
 
 export interface InventoryItem {
   _id?: string; 
@@ -18,7 +19,11 @@ export interface InventoryItem {
   providedIn: 'root'
 })
 export class InventoryService {
-  private apiUrl = 'http://localhost:5000/api/inventory'; // ✅ API URL Fix
+  // ✅ Use environment URL for production & local both
+  private apiUrl = `${environment.apiUrl}/inventory`;
+
+  // 🔹 Old Local URL (Just for reference, not used)
+  // private apiUrl = 'http://localhost:5000/inventory';
 
   constructor(private http: HttpClient) {}
 

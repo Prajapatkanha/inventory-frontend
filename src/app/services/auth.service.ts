@@ -2,12 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';  // ✅ Environment Import
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5000/auth';
+  // ✅ Use environment URL for production & local both
+  private apiUrl = `${environment.apiUrl}/auth`;
+
+  // 🔹 Old Local URL (Just for reference, not used)
+  // private apiUrl = 'http://localhost:5000/auth';
 
   constructor(private http: HttpClient, private router: Router) {}
 
