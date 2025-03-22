@@ -1,0 +1,62 @@
+/* ✅ Actions Buttons Container */
+.actions {
+    display: flex;
+    flex-direction: column;  /* ✅ Buttons को एक के नीचे एक लाने के लिए */
+    align-items: center;
+    gap: 8px; /* ✅ Buttons के बीच का Space */
+}
+
+/* ✅ Common Button Styling */
+.complete-btn, .delete-btn {
+    width: 140px;  /* ✅ दोनों बटन की Same Width */
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* ✅ Mark as Completed Button */
+.complete-btn {
+    background: #28a745;
+    color: white;
+}
+
+.complete-btn:hover {
+    background: #218838;
+}
+
+/* ✅ Delete Button */
+.delete-btn {
+    background: rgb(235, 21, 21);
+    color: white;
+    margin-top: 5px; 
+    font-weight: 700;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+/* ✅ Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}

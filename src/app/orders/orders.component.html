@@ -1,0 +1,44 @@
+<h2>📦 Orders</h2>
+
+<!-- ✅ Order Form -->
+<div class="order-form">
+  <input type="text" [(ngModel)]="newOrder.customerName" placeholder="Customer Name">
+  <select (change)="onItemSelect($event)">
+    <option disabled selected>Select Item</option>
+    <option *ngFor="let item of inventory" [value]="item._id">
+      {{ item.item }} - ₹{{ item.price }}
+    </option>
+  </select>
+  
+  <p><strong>Total Amount:</strong> ₹{{ newOrder.totalAmount }}</p>
+  <button (click)="addOrder()">🛒 Place Order</button>
+</div>
+
+<!-- ✅ Orders Table -->
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Customer Name</th>
+      <th>Total Amount</th>
+      <th>Status</th>
+      <th>Actions</th> <!-- ✅ New Column for Delete & Complete -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order._id }}</td>
+      <td>{{ order.customerName }}</td>
+      <td>₹{{ order.totalAmount }}</td>
+      <td>{{ order.status || 'Pending' }}</td>
+      <td>
+        <button *ngIf="order.status === 'Pending'" class="complete-btn" (click)="completeOrder(order._id || '')">
+          ✅ Completed
+        </button>
+        
+        <!-- ✅ Delete Button -->
+        <button class="delete-btn" (click)="deleteOrder(order._id || '')">🗑️ Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,34 @@
+<h2>Suppliers</h2>
+
+<!-- Add New Supplier Form -->
+<div class="add-supplier">
+  <input type="text" [(ngModel)]="newSupplier.name" placeholder="Supplier Name" required>
+  <input type="text" [(ngModel)]="newSupplier.contact" placeholder="Contact" required>
+  <input type="email" [(ngModel)]="newSupplier.email" placeholder="Email">
+  <input type="text" [(ngModel)]="newSupplier.address" placeholder="Address">
+  <button (click)="addSupplier()">Add Supplier</button>
+</div>
+
+<!-- Suppliers List -->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let supplier of suppliers">
+      <td>{{ supplier.name }}</td>
+      <td>{{ supplier.contact }}</td>
+      <td>{{ supplier.email }}</td>
+      <td>{{ supplier.address }}</td>
+      <td>
+        <button class="delete-btn" (click)="deleteSupplier(supplier._id!)">❌ Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

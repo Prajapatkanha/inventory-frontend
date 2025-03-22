@@ -1,0 +1,145 @@
+/* 🌟 Top Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 🧑 User Info */
+.user-info p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 🚀 Buttons */
+button {
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* 🔴 Logout Button */
+button.logout {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.logout:hover {
+  background-color: #b52b3a;
+}
+
+/* 🟢 Add Item Button */
+.add-item button {
+  background: #28a745;
+  color: white;
+}
+
+.add-item button:hover {
+  background: #218838;
+}
+
+/* ✏️ Edit Button */
+button.edit-btn {
+  background-color: #ffc107;
+  color: black;
+}
+
+button.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+/* ❌ Delete Button */
+button.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.delete-btn:hover {
+  background-color: #b52b3a;
+}
+
+/* 📦 Add Item Section */
+.add-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-item input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 120px;
+}
+
+/* 📋 Inventory Table */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Table Scroll को रोकने के लिए */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+th {
+  background: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* ⚠️ No Items Message */
+.no-items {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  padding: 15px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .add-item {
+    flex-direction: column;
+  }
+
+  .add-item input {
+    width: 100%;
+  }
+
+  .add-item button {
+    width: 100%;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}

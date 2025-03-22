@@ -1,0 +1,41 @@
+<div class="sidebar">
+  <!-- ✅ User Profile Section -->
+  <div class="user-profile">
+    <i class="fa fa-user-circle"></i>
+    <span>Welcome, {{ userName }}</span> <!-- ✅ Fix -->
+  </div>
+  
+  <h2>🥼 Cloth Inventory</h2>
+  <ul>
+    <li routerLinkActive="active">
+      <a [routerLink]="'/dashboard'">
+        <i class="fa fa-chart-line"></i> Dashboard
+      </a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="'/inventory'">
+        <i class="fa fa-box"></i> Inventory
+      </a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="'/orders'">
+        <i class="fa fa-file-invoice"></i> Orders
+      </a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="'/suppliers'">
+        <i class="fa fa-truck"></i> Suppliers
+      </a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="'/categories'">
+        <i class="fa fa-list"></i> Categories
+      </a>
+    </li>
+  </ul>
+
+  <!-- ✅ Logout Button -->
+  <div class="logout-btn" (click)="logout()">
+    <i class="fa fa-sign-out"></i> Logout
+  </div>
+</div>

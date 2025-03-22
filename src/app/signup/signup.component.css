@@ -1,0 +1,88 @@
+/* Full-screen container with gradient background */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #0044cc, #0088ff);
+    padding: 20px;
+}
+
+/* White box for form */
+.signup-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form title */
+.signup-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Input field group */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Icons inside input fields */
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #0052cc;
+}
+
+/* Sign-in text */
+p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+h2 {
+    color: black;
+}
+
+.login-link {
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}

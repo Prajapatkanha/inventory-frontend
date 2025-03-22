@@ -1,0 +1,70 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+/* ✅ Grid Layout for Dashboard Cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* ✅ Card Styling */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ✅ Low Stock Section */
+.low-stock-section {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffefc1;
+}
+
+.low-stock-section h3 {
+  color: #d9534f;
+  text-align: center;
+}
+
+.low-stock-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.low-stock-section th, .low-stock-section td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.low-stock-section th {
+  background-color: #d9534f;
+  color: white;
+}
+
+.low-stock-section tbody tr:hover {
+  background-color: #f1f1f1;
+}

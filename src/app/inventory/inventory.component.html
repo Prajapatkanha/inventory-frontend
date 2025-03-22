@@ -1,0 +1,97 @@
+<h2>Inventory Management</h2>
+
+<!-- ✅ Add New Item -->
+<div class="add-item">
+  <input type="text" [(ngModel)]="newItem.item" placeholder="Item Name" required>
+
+  <!-- ✅ Category Dropdown -->
+  <select [(ngModel)]="newItem.category" required>
+    <option value="" disabled selected>Select Category</option>
+    <option *ngFor="let cat of categories" [value]="cat.name">{{ cat.name }}</option>
+  </select>
+
+  <input type="number" [(ngModel)]="newItem.price" placeholder="Price" required>
+
+  <!-- ✅ Supplier Dropdown -->
+  <select [(ngModel)]="newItem.supplier" required>
+    <option value="" disabled selected>Select Supplier</option>
+    <option *ngFor="let supplier of suppliers" [value]="supplier.name">{{ supplier.name }}</option>
+  </select>
+
+  <input type="text" [(ngModel)]="newItem.brand" placeholder="Brand" required>
+  <input type="text" [(ngModel)]="newItem.size" placeholder="Size (S, M, L)" required>
+  <input type="text" [(ngModel)]="newItem.color" placeholder="Color" required>
+  <button (click)="addItem()">Add Item</button>
+</div>
+
+<!-- ✅ Inventory List -->
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Supplier</th>
+        <th>Brand</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of inventory">
+        <td>
+          <input *ngIf="editingItem === item._id" [(ngModel)]="editedItem.item">
+          <span *ngIf="editingItem !== item._id">{{ item.item }}</span>
+        </td>
+        
+        <td>
+          <select *ngIf="editingItem === item._id" [(ngModel)]="editedItem.category">
+            <option *ngFor="let cat of categories" [value]="cat.name">{{ cat.name }}</option>
+          </select>
+          <span *ngIf="editingItem !== item._id">{{ item.category }}</span>
+        </td>
+
+        <td>
+          <input *ngIf="editingItem === item._id" [(ngModel)]="editedItem.price">
+          <span *ngIf="editingItem !== item._id">₹{{ item.price }}</span>
+        </td>
+
+        <td>
+          <select *ngIf="editingItem === item._id" [(ngModel)]="editedItem.supplier">
+            <option *ngFor="let supplier of suppliers" [value]="supplier.name">{{ supplier.name }}</option>
+          </select>
+          <span *ngIf="editingItem !== item._id">{{ item.supplier }}</span>
+        </td>
+
+        <td>
+          <input *ngIf="editingItem === item._id" [(ngModel)]="editedItem.brand">
+          <span *ngIf="editingItem !== item._id">{{ item.brand }}</span>
+        </td>
+
+        <td>
+          <input *ngIf="editingItem === item._id" [(ngModel)]="editedItem.size">
+          <span *ngIf="editingItem !== item._id">{{ item.size }}</span>
+        </td>
+
+        <td>
+          <input *ngIf="editingItem === item._id" [(ngModel)]="editedItem.color">
+          <span *ngIf="editingItem !== item._id">{{ item.color }}</span>
+        </td>
+
+        <td>
+          <input *ngIf="editingItem === item._id" [(ngModel)]="editedItem.quantity">
+          <span *ngIf="editingItem !== item._id">{{ item.quantity }}</span>
+        </td>
+
+        <td>
+          <button *ngIf="editingItem !== item._id" class="edit-btn" (click)="editItem(item)">✏️ Edit</button>
+          <button *ngIf="editingItem === item._id" class="save-btn" (click)="saveEdit()">💾 Save</button>
+          <button class="delete-btn" (click)="deleteItem(item._id)">🗑️ Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+<h2>📂 Categories</h2>
+
+<!-- ✅ Add New Category Form -->
+<div class="add-category">
+  <input type="text" [(ngModel)]="newCategory.name" placeholder="Category Name" required>
+  <button (click)="addCategory()">➕ Add Category</button>
+</div>
+
+<!-- ✅ Categories List -->
+<table>
+  <thead>
+    <tr>
+      <th>Category Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <td>{{ category.name }}</td>
+      <td>
+        <button class="delete-btn" (click)="deleteCategory(category._id!)">❌ Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

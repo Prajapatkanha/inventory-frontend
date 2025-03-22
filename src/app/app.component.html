@@ -1,0 +1,8 @@
+<div class="main-container">
+  <!-- ✅ Sidebar तभी दिखे जब user logged in हो और auth pages (login/signup) पर न हो -->
+  <app-sidebar *ngIf="authService.isLoggedIn() && !isAuthPage()"></app-sidebar>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="dashboard-container">
+  <h2>📊 Dashboard</h2>
+  
+  <!-- ✅ Dashboard Stats in Grid Layout -->
+  <div class="dashboard-cards">
+    <div class="card">
+      <h3>📦 Total Inventory</h3>
+      <p>{{ totalInventory }} Items</p>
+    </div>
+
+    <div class="card">
+      <h3>⚠️ Low Stock Items</h3>
+      <p>{{ lowStockItems }} Items</p>
+    </div>
+
+    <div class="card">
+      <h3>📂 Total Categories</h3>
+      <p>{{ totalCategories }} Categories</p>
+    </div>
+
+    <div class="card">
+      <h3>📋 Total Orders</h3>
+      <p>{{ totalOrders }} Orders</p>
+    </div>
+
+    <div class="card">
+      <h3>🚛 Total Suppliers</h3>
+      <p>{{ totalSuppliers }} Suppliers</p>
+    </div>
+
+    <div class="card">
+      <h3>💰 Total Revenue</h3>
+      <p>₹{{ totalRevenue }}</p>
+    </div>
+  </div>
+
+  <!-- ✅ Low Stock Items List (Only Show When Data Exists) -->
+  <div class="low-stock-section" *ngIf="lowStockList.length > 0">
+    <h3>⚠️ Low Stock Items</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of lowStockList">
+          <td>{{ item.item }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
