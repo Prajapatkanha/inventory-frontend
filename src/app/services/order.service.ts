@@ -17,7 +17,7 @@ export interface Order {
 })
 export class OrderService {
   // ✅ Use environment URL for production & local both
-  private apiUrl = `${environment.apiUrl}/order`;
+  private apiUrl = `${environment.apiUrl}/orders`;
 
   // 🔹 Old Local URL (Just for reference, not used)
   // private apiUrl = 'http://localhost:5000/order';

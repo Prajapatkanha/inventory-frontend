@@ -13,7 +13,7 @@ export interface Category {
 })
 export class CategoryService {
   // ✅ Use environment URL for production & local both
-  private apiUrl = `${environment.apiUrl}/category`;
+  private apiUrl = `${environment.apiUrl}/categories`;
 
   // 🔹 Old Local URL (Just for reference, not used)
   // private apiUrl = 'http://localhost:5000/category';
