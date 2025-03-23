@@ -27,13 +27,19 @@
               }
             ],
             "styles": [
-             "src/styles.css",
-            "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+              "src/styles.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -60,9 +66,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "inventory-frontend:build:production",
-              "replace": "src/environments/environment.ts",
-              "with": "src/environments/environment.prod.ts"
+              "buildTarget": "inventory-frontend:build:production"
             },
             "development": {
               "buildTarget": "inventory-frontend:build:development"
